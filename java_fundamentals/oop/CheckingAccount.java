@@ -36,4 +36,10 @@ public class CheckingAccount extends BankAccount {
 
     return success;
   }
+
+  // This is the REQUIRED implementation of the abstract method from the parent.
+  @Override
+  public void displayAccountType() {
+    System.out.println("Account Type: Checking Account");
+  }
 }

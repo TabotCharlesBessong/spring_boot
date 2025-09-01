@@ -1,9 +1,16 @@
 package oop;
 
-public class BankAccount {
+public abstract class BankAccount {
   // 1. Data (Fields) are declared PRIVATE
   // They are "encapsulated" inside this class.
-  private String accountNumber;
+
+  private static int accountsCreated = 0; // Static field to keep track of number of accounts
+
+  public static int getAccountsCreated() {
+    return accountsCreated;
+  }
+
+  private final String accountNumber;
   private String ownerName;
   private double balance;
 
@@ -12,11 +19,15 @@ public class BankAccount {
     this.accountNumber = accountNumber;
     this.ownerName = ownerName;
     this.balance = initialBalance;
+    accountsCreated++;
   }
 
   // 3. Public methods (Behaviors) provide controlled access to the data
 
   // This is a "getter" method - it only reads data
+  public final String getAccountNumber() {
+    return this.accountNumber;
+  }
   public double getBalance() {
     return this.balance;
   }
@@ -46,4 +57,6 @@ public class BankAccount {
       return false; // Withdrawal failed
     }
   }
+
+  public abstract void displayAccountType();
 }

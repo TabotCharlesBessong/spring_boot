@@ -17,4 +17,9 @@ public class SavingsAccount extends BankAccount {
     deposit(interest); // We can call the parent's public methods!
     System.out.println("Applied interest of: " + interest);
   }
+
+  @Override
+  public void displayAccountType() {
+    System.out.println("This is a Savings Account.");
+  }
 }
