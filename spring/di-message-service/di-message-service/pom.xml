@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 1. Project Coordinates (Your project's unique ID) -->
+    <groupId>com.myjourney</groupId>
+    <artifactId>di-message-service</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 2. Project Properties (Settings for the build) -->
+    <properties>
+        <!-- Set the Java version to 17 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Set character encoding to avoid issues on different OS -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Define a variable for the Spring version to use it below -->
+        <spring.version>6.0.13</spring.version>
+    </properties>
+
+    <!-- 3. Project Dependencies (The libraries your project needs) -->
+    <dependencies>
+        
+        <!-- THIS IS THE CRUCIAL DEPENDENCY FOR SPRING -->
+        <!-- It provides the IoC container, @Component, @Autowired, etc. -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- The dependencies below are for testing, which is good practice. -->
+        <!-- We will use them later in the course. -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope> <!-- 'test' scope means it's only needed for running tests -->
+        </dependency>
+
+    </dependencies>
+
+    <!-- 4. Build Configuration (Optional but good practice) -->
+    <!-- This section ensures Maven uses up-to-date plugins for building your project -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
